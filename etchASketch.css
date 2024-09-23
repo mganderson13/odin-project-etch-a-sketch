@@ -1,0 +1,14 @@
+#container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 950px;
+    height: 950px;
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+.gridDiv {
+    border: 2px solid black;
+    box-sizing: border-box;
+}
