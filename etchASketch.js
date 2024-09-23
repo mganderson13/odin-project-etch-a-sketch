@@ -11,9 +11,14 @@ const button = document.querySelector("#promptButton");
 let userInput;
 
 button.addEventListener("click", () => {
-    userInput = prompt("Enter the number of rows/columns you would like to see: ");
+    userInput = prompt("Enter the number of rows/columns you would like to see (between 2 and 100)");
     container.innerHTML= "";
+    if (!(parseInt(userInput) <= 100) || !(parseInt(userInput) >= 2)) {
+        userInput = prompt("Enter the number of rows/columns you would like to see (between 2 and 100)");
+        createGrid(userInput);
+    }else {
     createGrid(userInput);
+    }
 })
 
 function createGrid(number) {
