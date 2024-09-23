@@ -6,8 +6,21 @@
 // set css to color square when hover and stay colored 
 
 const container = document.querySelector("#container");
+const button = document.querySelector("#promptButton");
+
+let userInput;
+
+button.addEventListener("click", () => {
+    userInput = prompt("Enter the number of rows/columns you would like to see: ");
+    container.innerHTML= "";
+    createGrid(userInput);
+})
 
 function createGrid(number) {
+    if (!number) {
+        number = 16;
+    }
+
     const size = 100 / number;
 
     for (let i = 0; i < number*number; i++) {
@@ -23,4 +36,4 @@ function createGrid(number) {
 }
 }
 
-createGrid(16);
+createGrid(userInput);
