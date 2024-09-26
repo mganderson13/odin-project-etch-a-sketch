@@ -33,8 +33,13 @@ function createGrid(number) {
        gridDiv.classList.add("gridDiv");
        gridDiv.style.flexBasis = `${size}%`;
        gridDiv.style.height = `${size}%`;
+       gridDiv.style.opacity = ".1";
        gridDiv.addEventListener("mouseenter", () => {
         gridDiv.style.backgroundColor = "purple";
+        let opacity = parseFloat(gridDiv.style.opacity);
+        if (opacity < 1) {
+        gridDiv.style.opacity = (opacity + 0.1).toString();
+        }
        })
        container.appendChild(gridDiv);
        
